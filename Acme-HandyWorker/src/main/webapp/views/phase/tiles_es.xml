@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+      
+<tiles-definitions>
+
+	<definition name="phase/edit" extends="master.page">	
+		<put-attribute name="title" value="Crear Fase" />
+		<put-attribute name="body" value="/views/phase/edit.jsp" />
+	</definition>
+	
+	<definition name="phase/list" extends="master.page">	
+		<put-attribute name="title" value="Plan de trabajo" />
+		<put-attribute name="body" value="/views/phase/list.jsp" />
+	</definition>
+	
+	<definition name="phase/display" extends="master.page">	
+		<put-attribute name="title" value="Mostrar Fase" />
+		<put-attribute name="body" value="/views/phase/display.jsp" />
+	</definition>
+	
+</tiles-definitions>

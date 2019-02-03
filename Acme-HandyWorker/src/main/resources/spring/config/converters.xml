@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+ * converters.xml
+ *
+ * Copyright (C) 2018 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd		
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd		
+	">
+
+	<util:list id="converters">
+		<bean class="converters.ActorToStringConverter" /> 
+		<bean class="converters.StringToActorConverter" />
+		
+		<bean class="converters.AdministratorToStringConverter" /> 
+		<bean class="converters.StringToAdministratorConverter" /> 
+		
+		<bean class="converters.ApplicationToStringConverter" /> 
+		<bean class="converters.StringToApplicationConverter" /> 
+		
+		<bean class="converters.BoxToStringConverter" /> 
+		<bean class="converters.StringToBoxConverter" /> 
+		
+		<bean class="converters.CategoryToStringConverter" /> 
+		<bean class="converters.StringToCategoryConverter" /> 
+		
+		<bean class="converters.CategoryTranslationToStringConverter" /> 
+		<bean class="converters.StringToCategoryTranslationConverter" /> 
+		
+		<bean class="converters.CreditCardToStringConverter" /> 
+		<bean class="converters.StringToCreditCardConverter" /> 
+
+		<bean class="converters.CustomerToStringConverter" /> 
+		<bean class="converters.StringToCustomerConverter" /> 
+		
+		<bean class="converters.CustomisationToStringConverter" /> 
+		<bean class="converters.StringToCustomisationConverter" /> 
+		
+		<bean class="converters.FixUpTaskToStringConverter" /> 
+		<bean class="converters.StringToFixUpTaskConverter" /> 
+		
+		<bean class="converters.HandyWorkerToStringConverter" /> 
+		<bean class="converters.StringToHandyWorkerConverter" /> 
+		
+		<bean class="converters.MessageToStringConverter" /> 
+		<bean class="converters.StringToMessageConverter" /> 
+		
+		<bean class="converters.PhaseToStringConverter" /> 
+		<bean class="converters.StringToPhaseConverter" /> 
+		
+		<bean class="converters.SocialProfileToStringConverter" /> 
+		<bean class="converters.StringToSocialProfileConverter" />
+		
+		<bean class="converters.WarrantyToStringConverter" /> 
+		<bean class="converters.StringToWarrantyConverter" />
+		
+		<bean class="converters.AuthorityToStringConverter" /> 
+		<bean class="converters.StringToAuthorityConverter" /> 
+		
+		<bean class="converters.UserAccountToStringConverter" /> 
+		<bean class="converters.StringToUserAccountConverter" />
+		
+	
+		
+		<bean class="converters.StringToActorConverter" />
+		<bean class="converters.ActorToStringConverter" /> 
+	
+		<bean class="converters.StringToAdministratorConverter" />
+		<bean class="converters.AdministratorToStringConverter" /> 
+		 
+		<bean class="converters.StringToApplicationConverter" /> 
+		<bean class="converters.ApplicationToStringConverter" /> 
+		
+		<bean class="converters.StringToBoxConverter" /> 
+		<bean class="converters.BoxToStringConverter" /> 
+		
+		<bean class="converters.StringToCategoryConverter" />
+		<bean class="converters.CategoryToStringConverter" /> 
+		 
+		<bean class="converters.StringToCategoryTranslationConverter" />
+		<bean class="converters.CategoryTranslationToStringConverter" /> 
+		 
+		<bean class="converters.StringToCreditCardConverter" /> 
+		<bean class="converters.CreditCardToStringConverter" /> 
+		
+
+		<bean class="converters.StringToCustomerConverter" /> 
+		<bean class="converters.CustomerToStringConverter" /> 
+		
+		<bean class="converters.StringToCustomisationConverter" /> 
+		<bean class="converters.CustomisationToStringConverter" /> 
+ 
+
+		
+		<bean class="converters.StringToFixUpTaskConverter" /> 
+		<bean class="converters.FixUpTaskToStringConverter" /> 
+		
+		<bean class="converters.StringToHandyWorkerConverter" /> 
+		<bean class="converters.HandyWorkerToStringConverter" /> 
+		
+		<bean class="converters.StringToMessageConverter" />
+		<bean class="converters.MessageToStringConverter" /> 
+		 
+	
+	
+		<bean class="converters.StringToPhaseConverter" /> 
+		<bean class="converters.PhaseToStringConverter" /> 
+		
+	
+	
+
+		<bean class="converters.StringToWarrantyConverter" />
+		<bean class="converters.WarrantyToStringConverter" /> 
+		
+		<bean class="converters.StringToAuthorityConverter" /> 
+		<bean class="converters.AuthorityToStringConverter" /> 
+		
+		<bean class="converters.StringToUserAccountConverter" />
+		<bean class="converters.UserAccountToStringConverter" /> 
+		
+		<!-- TODO control check -->
+		
+		<bean class="converters.StringToQuoletConverter" />
+		<bean class="converters.QuoletToStringConverter" /> 
+	</util:list>
+	
+</beans>

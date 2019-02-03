@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+      
+<tiles-definitions>
+
+	<definition name="complaint/edit" extends="master.page">	
+		<put-attribute name="title" value="Crear Queja" />
+		<put-attribute name="body" value="/views/complaint/edit.jsp" />
+	</definition>
+	
+	<definition name="complaint/list" extends="master.page">	
+		<put-attribute name="title" value="Listado de Quejas" />
+		<put-attribute name="body" value="/views/complaint/list.jsp" />
+	</definition>
+	
+	<definition name="complaint/display" extends="master.page">	
+		<put-attribute name="title" value="Mostrar Queja" />
+		<put-attribute name="body" value="/views/complaint/display.jsp" />
+	</definition>
+	
+</tiles-definitions>
