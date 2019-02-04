@@ -203,7 +203,7 @@ public class BountService {
 		return bounts;
 	}
 
-	//QUERY B (1) - The ratio of published QUOLET vs total number of QUOLET
+	//QUERY B (1) - The ratio of published BOUNT vs total number of BOUNT
 	public Double findRatioPublishedBountvsAllBount() {
 		Double result;
 
@@ -212,7 +212,7 @@ public class BountService {
 		return result;
 	}
 
-	//QUERY C (1) - The ratio of unpublished QUOLET vs total number of QUOLET
+	//QUERY C (1) - The ratio of unpublished BOUNT vs total number of BOUNT
 	public Double findRatioUnpublishedBountvsAllQuoles() {
 		Double result;
 
