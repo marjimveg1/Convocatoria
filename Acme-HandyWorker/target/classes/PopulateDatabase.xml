@@ -2012,11 +2012,11 @@
 				<ref bean="application1" />
 			</list>
 		</property>
-		<property name="quolets">
+		<property name="bounts">
 			<list>
-				<ref bean="quolet1test" />
-				<ref bean="quolet2test" />
-				<ref bean="quolet5test" />
+				<ref bean="bount1test" />
+				<ref bean="bount2test" />
+				<ref bean="bount5test" />
 			</list>
 		</property>
 	</bean>
@@ -2043,7 +2043,7 @@
 				<ref bean="application3" />
 			</list>
 		</property>
-		<property name="quolets">
+		<property name="bounts">
 			<list>
 				<null></null>
 			</list>
@@ -2072,7 +2072,7 @@
 				<ref bean="application4" />
 			</list>
 		</property>
-		<property name="quolets">
+		<property name="bounts">
 			<list>
 				<null></null>
 			</list>
@@ -2100,10 +2100,10 @@
 				<ref bean="application5" />
 			</list>
 		</property>
-		<property name="quolets">
+		<property name="bounts">
 			<list>
-				<ref bean="quolet3test" />
-				<ref bean="quolet6test" />
+				<ref bean="bount3test" />
+				<ref bean="bount6test" />
 			</list>
 		</property>
 	</bean>
@@ -2129,9 +2129,9 @@
 				<ref bean="application6" />
 			</list>
 		</property>
-		<property name="quolets">
+		<property name="bounts">
 			<list>
-				<ref bean="quolet4test" />
+				<ref bean="bount4test" />
 			</list>
 		</property>
 	</bean>
@@ -2160,7 +2160,7 @@
 				<ref bean="application8" />
 			</list>
 		</property>
-		<property name="quolets">
+		<property name="bounts">
 			<list>
 				<null></null>
 			</list>
@@ -2189,7 +2189,7 @@
 				<ref bean="application12" />
 			</list>
 		</property>
-		<property name="quolets">
+		<property name="bounts">
 			<list>
 				<null></null>
 			</list>
@@ -2218,7 +2218,7 @@
 				<ref bean="application10" />
 			</list>
 		</property>
-		<property name="quolets">
+		<property name="bounts">
 			<list>
 				<null></null>
 			</list>
@@ -2708,53 +2708,53 @@
 	</bean>
 
 <!--  CONTROL CHECK -->
-	
-	<bean id="quolet1test" class="domain.Quolet">
-		<property name="ticker" value="180721-XYZ456" />
+	<!--  menos de un mes-->
+	<bean id="bount1test" class="domain.Bount">
+		<property name="ticker" value="ab01-210119" />
 		<property name="publicationMoment" value="2019/01/21 16:31" />
-		<property name="body" value="body of test1" />
+		<property name="body" value="body1 of test" />
 		<property name="picture" value="http://plenilunia.com/wp-content/uploads/2014/07/Depositphotos_49058819_original.jpg" />
 		<property name="finalMode" value="true" />
 	</bean>
 	
-		
-	<bean id="quolet2test" class="domain.Quolet">
-		<property name="ticker" value="180721-XYZ789" />
+	<!--  mas de dos meses-->
+	<bean id="bount2test" class="domain.Bount">
+		<property name="ticker" value="ab02-210918" />
 		<property name="publicationMoment" value="2018/09/21 09:03" />
-		<property name="body" value="body of test2" />
+		<property name="body" value="body2 of test" />
 		<property name="picture" value="https://i.pinimg.com/originals/48/85/db/4885db53e4f8017044938ec5131dd1c5.jpg" />
 		<property name="finalMode" value="true" />
 	</bean>
 	
-		
-	<bean id="quolet3test" class="domain.Quolet">
-		<property name="ticker" value="180721-XYZ102" />
+	<!--  mas de dos meses-->	
+	<bean id="bount3test" class="domain.Bount">
+		<property name="ticker" value="cb03-051018" />
 		<property name="publicationMoment" value="2018/10/05 10:45" />
-		<property name="body" value="body of test3" />
+		<property name="body" value="body3 of test" />
 		<property name="picture" value="https://static8.depositphotos.com/1000765/1038/i/950/depositphotos_10381501-stock-photo-3d-small-survey.jpg" />
 		<property name="finalMode" value="true" />
 	</bean>
 	
-		
-	<bean id="quolet4test" class="domain.Quolet">
-		<property name="ticker" value="180721-XYZ698" />
+	<!--  entre un mes y dos meses-->
+	<bean id="bount4test" class="domain.Bount">
+		<property name="ticker" value="cd05-291218" />
 		<property name="publicationMoment" value="2018/12/29 12:23" />
-		<property name="body" value="body of test4" />
+		<property name="body" value="body4 of test" />
 		<property name="picture" value="https://i.pinimg.com/236x/3c/04/18/3c04186f17f7a10bc1738c16062eddc1.jpg" />
 		<property name="finalMode" value="true" />
 	</bean>
-	
-		<bean id="quolet5test" class="domain.Quolet">
-		<property name="ticker" value="169821-XYZ102" />
-		<property name="body" value="body of test5" />
+	<!--  sin publicar-->
+		<bean id="bount5test" class="domain.Bount">
+		<property name="ticker" value="ed12-020618" />
+		<property name="body" value="body5 of test" />
 		<property name="picture" value="https://static8.depositphotos.com/1000765/1038/i/950/depositphotos_10381501-stock-photo-3d-small-survey.jpg" />
 		<property name="finalMode" value="false" />
 	</bean>
 	
-		
-	<bean id="quolet6test" class="domain.Quolet">
-		<property name="ticker" value="136985-XYZ698" />
-		<property name="body" value="body of test6" />
+		<!--  sin publicar-->
+	<bean id="bount6test" class="domain.Bount">
+		<property name="ticker" value="ed03-060918" />
+		<property name="body" value="body6 of test" />
 		<property name="picture" value="https://i.pinimg.com/236x/3c/04/18/3c04186f17f7a10bc1738c16062eddc1.jpg" />
 		<property name="finalMode" value="false" />
 	</bean>

@@ -25,18 +25,18 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import services.CustomerService;
 import services.FixUpTaskService;
-import services.QuoletService;
+import services.BountService;
 import controllers.AbstractController;
 import domain.Customer;
 import domain.FixUpTask;
-import domain.Quolet;
+import domain.Bount;
 
 @Controller
-@RequestMapping("/quolet/customer")
-public class QuoletCustomerController extends AbstractController {
+@RequestMapping("/bount/customer")
+public class BountCustomerController extends AbstractController {
 
 	@Autowired
-	private QuoletService		quoletService;
+	private BountService		bountService;
 
 	@Autowired
 	private CustomerService		customerService;
@@ -46,7 +46,7 @@ public class QuoletCustomerController extends AbstractController {
 
 
 	// Constructors -----------------------------------------------------------
-	public QuoletCustomerController() {
+	public BountCustomerController() {
 
 	}
 
@@ -56,14 +56,14 @@ public class QuoletCustomerController extends AbstractController {
 	public ModelAndView list() {
 		ModelAndView result;
 		Customer principal;
-		Collection<Quolet> quolets;
+		Collection<Bount> bounts;
 
 		principal = this.customerService.findByPrincipal();
 
-		quolets = this.quoletService.findQuoletsByCustomerid(principal.getId());
+		bounts = this.bountService.findBountsByCustomerid(principal.getId());
 
-		result = new ModelAndView("quolet/list");
-		result.addObject("quolets", quolets);
+		result = new ModelAndView("bount/list");
+		result.addObject("bounts", bounts);
 
 		return result;
 	}
@@ -73,10 +73,10 @@ public class QuoletCustomerController extends AbstractController {
 	@RequestMapping(value = "/create", method = RequestMethod.GET)
 	public ModelAndView create(@RequestParam final int fixUpTaskId) {
 		ModelAndView result;
-		Quolet quolet;
+		Bount bount;
 
-		quolet = this.quoletService.create();
-		result = this.createEditModelAndView(quolet);
+		bount = this.bountService.create();
+		result = this.createEditModelAndView(bount);
 		result.addObject("fixUpTaskId", fixUpTaskId);
 
 		return result;
@@ -85,23 +85,23 @@ public class QuoletCustomerController extends AbstractController {
 	// Edition ----------------------------------------------------------------
 
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)
-	public ModelAndView edit(@RequestParam final int quoletId) {
+	public ModelAndView edit(@RequestParam final int bountId) {
 		ModelAndView result;
-		Quolet quolet;
+		Bount bount;
 		FixUpTask fixUpTask;
 
-		quolet = this.quoletService.findOne(quoletId);
-		fixUpTask = this.quoletService.findFixUpTaskByQuoletid(quoletId);
-		result = this.createEditModelAndView(quolet);
+		bount = this.bountService.findOne(bountId);
+		fixUpTask = this.bountService.findFixUpTaskByBountid(bountId);
+		result = this.createEditModelAndView(bount);
 		result.addObject("fixUpTaskId", fixUpTask.getId());
 
 		return result;
 	}
 
 	@RequestMapping(value = "/edit", method = RequestMethod.POST, params = "save")
-	public ModelAndView save(@Valid final Quolet quolet, final BindingResult binding, final HttpServletRequest request) {
+	public ModelAndView save(@Valid final Bount bount, final BindingResult binding, final HttpServletRequest request) {
 		ModelAndView result;
-		Quolet saved;
+		Bount saved;
 		final FixUpTask fixUpTask;
 		Integer fixUpTaskId;
 		String paramFixUpTaskId;
@@ -110,30 +110,30 @@ public class QuoletCustomerController extends AbstractController {
 		fixUpTaskId = paramFixUpTaskId == null ? null : Integer.parseInt(paramFixUpTaskId);
 
 		if (binding.hasErrors())
-			result = this.createEditModelAndView(quolet, fixUpTaskId);
+			result = this.createEditModelAndView(bount, fixUpTaskId);
 		else
 			try {
-				if (quolet.getId() == 0) {
+				if (bount.getId() == 0) {
 
 					fixUpTask = this.fixUpTaskService.findOne(fixUpTaskId);
-					saved = this.quoletService.save(quolet, fixUpTask);
+					saved = this.bountService.save(bount, fixUpTask);
 				} else
-					saved = this.quoletService.save(quolet);
-				result = new ModelAndView("redirect:/quolet/handyWorker,customer/display.do?quoletId=" + saved.getId());
+					saved = this.bountService.save(bount);
+				result = new ModelAndView("redirect:/bount/handyWorker,customer/display.do?bountId=" + saved.getId());
 			} catch (final Throwable oops) {
-				result = this.createEditModelAndView(quolet, fixUpTaskId, "quolet.commit.error");
+				result = this.createEditModelAndView(bount, fixUpTaskId, "bount.commit.error");
 			}
 		return result;
 	}
 	@RequestMapping(value = "/edit", method = RequestMethod.POST, params = "delete")
-	public ModelAndView delete(final Quolet quolet, final BindingResult binding) {
+	public ModelAndView delete(final Bount bount, final BindingResult binding) {
 		ModelAndView result;
 
 		try {
-			this.quoletService.delete(quolet);
+			this.bountService.delete(bount);
 			result = new ModelAndView("redirect:list.do");
 		} catch (final Throwable oops) {
-			result = this.createEditModelAndView(quolet, "quolet.delete.error");
+			result = this.createEditModelAndView(bount, "bount.delete.error");
 		}
 
 		return result;
@@ -142,53 +142,53 @@ public class QuoletCustomerController extends AbstractController {
 	// Other business methods -------------------------------------------------
 
 	@RequestMapping(value = "/makeFinal", method = RequestMethod.GET)
-	public ModelAndView makeFinal(@RequestParam final int quoletId, final RedirectAttributes redir) {
+	public ModelAndView makeFinal(@RequestParam final int bountId, final RedirectAttributes redir) {
 		ModelAndView result;
-		Quolet quolet;
+		Bount bount;
 
-		quolet = this.quoletService.findOne(quoletId);
+		bount = this.bountService.findOne(bountId);
 
 		try {
-			this.quoletService.makeFinal(quolet);
+			this.bountService.makeFinal(bount);
 		} catch (final Throwable oops) {
-			redir.addFlashAttribute("messageCode", "quolet.make.final.error");
+			redir.addFlashAttribute("messageCode", "bount.make.final.error");
 		}
 
-		result = new ModelAndView("redirect:/quolet/handyWorker,customer/display.do?quoletId=" + quoletId);
+		result = new ModelAndView("redirect:/bount/handyWorker,customer/display.do?bountId=" + bountId);
 
 		return result;
 	}
 
 	// Ancillary methods ------------------------------------------------------
-	protected ModelAndView createEditModelAndView(final Quolet quolet) {
+	protected ModelAndView createEditModelAndView(final Bount bount) {
 		ModelAndView result;
 
-		result = this.createEditModelAndView(quolet, null, null);
+		result = this.createEditModelAndView(bount, null, null);
 
 		return result;
 	}
 
-	protected ModelAndView createEditModelAndView(final Quolet quolet, final Integer fixUpTaskId) {
+	protected ModelAndView createEditModelAndView(final Bount bount, final Integer fixUpTaskId) {
 		ModelAndView result;
 
-		result = this.createEditModelAndView(quolet, fixUpTaskId, null);
+		result = this.createEditModelAndView(bount, fixUpTaskId, null);
 
 		return result;
 	}
 
-	protected ModelAndView createEditModelAndView(final Quolet quolet, final String messageCode) {
+	protected ModelAndView createEditModelAndView(final Bount bount, final String messageCode) {
 		ModelAndView result;
 
-		result = this.createEditModelAndView(quolet, null, messageCode);
+		result = this.createEditModelAndView(bount, null, messageCode);
 
 		return result;
 	}
 
-	protected ModelAndView createEditModelAndView(final Quolet quolet, final Integer fixUpTaskId, final String messageCode) {
+	protected ModelAndView createEditModelAndView(final Bount bount, final Integer fixUpTaskId, final String messageCode) {
 		ModelAndView result;
 
-		result = new ModelAndView("quolet/edit");
-		result.addObject("quolet", quolet);
+		result = new ModelAndView("bount/edit");
+		result.addObject("bount", bount);
 		result.addObject("fixUpTaskId", fixUpTaskId);
 
 		result.addObject("messageCode", messageCode);

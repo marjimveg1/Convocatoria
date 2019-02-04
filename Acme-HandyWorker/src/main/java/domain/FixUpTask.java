@@ -183,17 +183,17 @@ public class FixUpTask extends DomainEntity {
 
 
 	// Relationships CONTROL CHECK----------------------------------------------------------
-	private Collection<Quolet>	quolets;
+	private Collection<Bount>	bounts;
 
 
 	@OneToMany
 	@NotNull
-	public Collection<Quolet> getQuolets() {
-		return this.quolets;
+	public Collection<Bount> getBounts() {
+		return this.bounts;
 	}
 
-	public void setQuolets(final Collection<Quolet> quolets) {
-		this.quolets = quolets;
+	public void setBounts(final Collection<Bount> bounts) {
+		this.bounts = bounts;
 	}
 
 }

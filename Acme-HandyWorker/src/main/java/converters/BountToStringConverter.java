@@ -12,20 +12,20 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import domain.Quolet;
+import domain.Bount;
 
 @Component
 @Transactional
-public class QuoletToStringConverter implements Converter<Quolet, String> {
+public class BountToStringConverter implements Converter<Bount, String> {
 
 	@Override
-	public String convert(final Quolet quolet) {
+	public String convert(final Bount bount) {
 		String result;
 
-		if (quolet == null)
+		if (bount == null)
 			result = null;
 		else
-			result = String.valueOf(quolet.getId());
+			result = String.valueOf(bount.getId());
 
 		return result;
 	}

@@ -84,10 +84,10 @@
 					<li><a href="fixUpTask/customer/list.do"><spring:message code="master.page.fixUpTask.own.list" /></a></li>
 				</ul>
 			</li>
-			<li><a class="fNiv"><spring:message	code="master.page.quolet" /></a>
+			<li><a class="fNiv"><spring:message	code="master.page.bount" /></a>
 				<ul>
 					<li class="arrow"></li>
-					<li><a href="quolet/customer/list.do"><spring:message code="master.page.quolet.own.list" /></a></li>
+					<li><a href="bount/customer/list.do"><spring:message code="master.page.bount.own.list" /></a></li>
 				</ul>
 			</li>
 		</security:authorize>

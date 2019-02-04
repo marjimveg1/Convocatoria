@@ -24,11 +24,11 @@ import services.ActorService;
 import services.CategoryTranslationService;
 import services.CustomisationService;
 import services.FixUpTaskService;
-import services.QuoletService;
+import services.BountService;
 import controllers.AbstractController;
 import domain.Actor;
 import domain.FixUpTask;
-import domain.Quolet;
+import domain.Bount;
 
 @Controller
 @RequestMapping("fixUpTask/customer,handyWorker,referee")
@@ -49,7 +49,7 @@ public class FixUpTaskMultiuserController extends AbstractController {
 	private ActorService				actorService;
 
 	@Autowired
-	private QuoletService				quoletService;
+	private BountService				bountService;
 
 
 	// Constructors -----------------------------------------------------------
@@ -68,7 +68,7 @@ public class FixUpTaskMultiuserController extends AbstractController {
 		double vat;
 		boolean isWorkable;
 		Actor principal;
-		Collection<Quolet> quolets;
+		Collection<Bount> bounts;
 
 		fixUpTask = this.fixUpTaskService.findOne(fixUpTaskId);
 		category = this.categoryTranslationService.findByLanguageCategory(fixUpTask.getCategory().getId(), locale.getLanguage()).getName();
@@ -84,10 +84,10 @@ public class FixUpTaskMultiuserController extends AbstractController {
 		result.addObject("principal", principal);
 
 		if (principal != fixUpTask.getCustomer()) {
-			quolets = this.quoletService.findQuoletsPublishedByTask(fixUpTaskId);
-			result.addObject("quolets", quolets);
+			bounts = this.bountService.findBountsPublishedByTask(fixUpTaskId);
+			result.addObject("bounts", bounts);
 		} else
-			result.addObject("quolets", fixUpTask.getQuolets());
+			result.addObject("bounts", fixUpTask.getBounts());
 
 		return result;
 	}

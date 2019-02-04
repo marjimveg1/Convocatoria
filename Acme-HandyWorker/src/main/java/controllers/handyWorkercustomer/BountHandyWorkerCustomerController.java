@@ -16,34 +16,34 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import services.QuoletService;
+import services.BountService;
 import controllers.AbstractController;
-import domain.Quolet;
+import domain.Bount;
 
 @Controller
-@RequestMapping("/quolet/handyWorker,customer")
-public class QuoletHandyWorkerCustomerController extends AbstractController {
+@RequestMapping("/bount/handyWorker,customer")
+public class BountHandyWorkerCustomerController extends AbstractController {
 
 	@Autowired
-	private QuoletService	quoletService;
+	private BountService	bountService;
 
 
 	// Constructors -----------------------------------------------------------
-	public QuoletHandyWorkerCustomerController() {
+	public BountHandyWorkerCustomerController() {
 
 	}
 
 	// Display ----------------------------------------------------------------
 
 	@RequestMapping(value = "/display", method = RequestMethod.GET)
-	public ModelAndView display(@RequestParam final int quoletId) {
+	public ModelAndView display(@RequestParam final int bountId) {
 		ModelAndView result;
-		Quolet quolet;
+		Bount bount;
 
-		quolet = this.quoletService.findOne(quoletId);
+		bount = this.bountService.findOne(bountId);
 
-		result = new ModelAndView("quolet/display");
-		result.addObject("quolet", quolet);
+		result = new ModelAndView("bount/display");
+		result.addObject("bount", bount);
 
 		return result;
 	}

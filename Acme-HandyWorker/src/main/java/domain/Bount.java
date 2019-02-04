@@ -19,11 +19,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class Quolet extends DomainEntity {
+public class Bount extends DomainEntity {
 
 	// Constructor
 
-	public Quolet() {
+	public Bount() {
 		super();
 	}
 
@@ -36,7 +36,7 @@ public class Quolet extends DomainEntity {
 	private Boolean	finalMode;
 
 
-	@Pattern(regexp = "\\d{6}-[A-Z0-9]{6}")
+	@Pattern(regexp = "^\\w{2}\\d{2}-\\d{6}$")
 	@Column(unique = true)
 	public String getTicker() {
 		return this.ticker;
@@ -57,7 +57,7 @@ public class Quolet extends DomainEntity {
 		this.publicationMoment = publicationMoment;
 	}
 	@NotBlank
-	@Length(min = 1, max = 50)
+	@Length(min = 1, max = 251)
 	public String getBody() {
 		return this.body;
 	}

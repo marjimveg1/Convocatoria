@@ -1,5 +1,5 @@
 /*
- * StringToQuoletConverter.java
+ * StringToBountConverter.java
  * 
  * Copyright (C) 2017 Universidad de Sevilla
  * 
@@ -16,20 +16,20 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import repositories.QuoletRepository;
-import domain.Quolet;
+import repositories.BountRepository;
+import domain.Bount;
 
 @Component
 @Transactional
-public class StringToQuoletConverter implements Converter<String, Quolet> {
+public class StringToBountConverter implements Converter<String, Bount> {
 
 	@Autowired
-	QuoletRepository	quoletRepository;
+	BountRepository	bountRepository;
 
 
 	@Override
-	public Quolet convert(final String text) {
-		Quolet result;
+	public Bount convert(final String text) {
+		Bount result;
 		int id;
 
 		try {
@@ -37,7 +37,7 @@ public class StringToQuoletConverter implements Converter<String, Quolet> {
 				result = null;
 			else {
 				id = Integer.valueOf(text);
-				result = this.quoletRepository.findOne(id);
+				result = this.bountRepository.findOne(id);
 			}
 		} catch (final Throwable oops) {
 			throw new IllegalArgumentException(oops);

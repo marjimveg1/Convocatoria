@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import services.ApplicationService;
+import services.BountService;
 import services.CustomerService;
 import services.FixUpTaskService;
 import services.HandyWorkerService;
-import services.QuoletService;
 import controllers.AbstractController;
 import domain.Customer;
 import domain.HandyWorker;
@@ -36,7 +36,7 @@ public class DashboardAdministratorController extends AbstractController {
 	private HandyWorkerService	handyWorkerService;
 
 	@Autowired
-	private QuoletService		quoletService;
+	private BountService		bountService;
 
 
 	// Constructors --------------
@@ -48,13 +48,12 @@ public class DashboardAdministratorController extends AbstractController {
 	@RequestMapping(value = "/display", method = RequestMethod.GET)
 	public ModelAndView display() {
 		ModelAndView result;
-		//TODO: dejar una
 		//Query A control check
-		Double[] findDataQuoletPerFixUpTask;
+		Double[] findDataBountPerFixUpTask;
 		//Query B control check
-		Double findRatioPublishedQuoletvsAllQuolet, findRatioPublishedQuoletvsAllFixUpTask;
+		Double findRatioPublishedBountvsAllBount;
 		//Query C control check
-		Double findRatioUnpublishedQuoletvsAllQuoles, findRatioUnpublishedQuoletvsAllFixUpTask;
+		Double findRatioUnpublishedBountvsAllQuoles;
 
 		//Deliverables
 		Double[] dataApplicationsPerTask, dataOfApplicationPrice;
@@ -64,15 +63,12 @@ public class DashboardAdministratorController extends AbstractController {
 		Collection<HandyWorker> handyWorkers;
 
 		//control check-----------------------------------------
-		//TODO CONTROL CHECK
 		//a
-		findDataQuoletPerFixUpTask = this.quoletService.findDataQuoletPerFixUpTask();
+		findDataBountPerFixUpTask = this.bountService.findDataBountPerFixUpTask();
 		//B
-		findRatioPublishedQuoletvsAllQuolet = this.quoletService.findRatioPublishedQuoletvsAllQuolet();
-		findRatioPublishedQuoletvsAllFixUpTask = this.quoletService.findRatioPublishedQuoletvsAllFixUpTask();
+		findRatioPublishedBountvsAllBount = this.bountService.findRatioPublishedBountvsAllBount();
 		//C
-		findRatioUnpublishedQuoletvsAllQuoles = this.quoletService.findRatioUnpublishedQuoletvsAllQuoles();
-		findRatioUnpublishedQuoletvsAllFixUpTask = this.quoletService.findRatioUnpublishedQuoletvsAllFixUpTask();
+		findRatioUnpublishedBountvsAllQuoles = this.bountService.findRatioUnpublishedBountvsAllQuoles();
 
 		// LEVEL C -----------------------------------------
 
@@ -91,15 +87,12 @@ public class DashboardAdministratorController extends AbstractController {
 		result = new ModelAndView("dashboard/display");
 
 		//control check-----------------------------------------
-		//TODO CONTROL CHECK
 		//a
-		result.addObject("findDataQuoletPerFixUpTask", findDataQuoletPerFixUpTask);
+		result.addObject("findDataBountPerFixUpTask", findDataBountPerFixUpTask);
 		//B
-		result.addObject("findRatioPublishedQuoletvsAllQuolet", findRatioPublishedQuoletvsAllQuolet);
-		result.addObject("findRatioPublishedQuoletvsAllFixUpTask", findRatioPublishedQuoletvsAllFixUpTask);
+		result.addObject("findRatioPublishedBountvsAllBount", findRatioPublishedBountvsAllBount);
 		//c
-		result.addObject("findRatioUnpublishedQuoletvsAllQuoles", findRatioUnpublishedQuoletvsAllQuoles);
-		result.addObject("findRatioUnpublishedQuoletvsAllFixUpTask", findRatioUnpublishedQuoletvsAllFixUpTask);
+		result.addObject("findRatioUnpublishedBountvsAllQuoles", findRatioUnpublishedBountvsAllQuoles);
 
 		// LEVEL C
 		result.addObject("dataFixUpTaskPerUser", dataFixUpTaskPerUser);

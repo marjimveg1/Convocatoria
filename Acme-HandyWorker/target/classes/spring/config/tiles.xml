@@ -36,7 +36,7 @@
 		<value>/views/welcome/tiles.xml</value>
 		
 		<!-- TODO control check -->
-		<value>/views/quolet/tiles.xml</value>
+		<value>/views/bount/tiles.xml</value>
 	</util:list>
 
 </beans>

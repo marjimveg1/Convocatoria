@@ -14,20 +14,16 @@
 <table>
 	<tr>
 		
-		<th> <spring:message code="dashboard.findDataQuoletPerFixUpTask.average" /> </th>		
-		<th> <spring:message code="dashboard.findDataQuoletPerFixUpTask.deviation" /> </th>
-		<th> <spring:message code="dashboard.findRatioPublishedQuoletvsAllQuolet" /> </th>
-		<th> <spring:message code="dashboard.findRatioPublishedQuoletvsAllFixUpTask" /> </th>
-		<th> <spring:message code="dashboard.findRatioUnpublishedQuoletvsAllQuoles" /> </th>
-		<th> <spring:message code="dashboard.findRatioUnpublishedQuoletvsAllFixUpTask" /> </th>
+		<th> <spring:message code="dashboard.findDataBountPerFixUpTask.average" /> </th>		
+		<th> <spring:message code="dashboard.findDataBountPerFixUpTask.deviation" /> </th>
+		<th> <spring:message code="dashboard.findRatioPublishedBountvsAllBount" /> </th>
+		<th> <spring:message code="dashboard.findRatioUnpublishedBountvsAllQuoles" /> </th>
 	</tr>
 	<tr>
-		<td> <jstl:out value="${findDataQuoletPerFixUpTask[0]}" /> </td>
-		<td> <jstl:out value="${findDataQuoletPerFixUpTask[1]}" /> </td>
-		<td> <jstl:out value="${findRatioPublishedQuoletvsAllQuolet}" /> </td>
-		<td> <jstl:out value="${findRatioPublishedQuoletvsAllFixUpTask}" /> </td>
-		<td> <jstl:out value="${findRatioUnpublishedQuoletvsAllQuoles}" /> </td>
-		<td> <jstl:out value="${findRatioUnpublishedQuoletvsAllFixUpTask}" /> </td>
+		<td> <jstl:out value="${findDataBountPerFixUpTask[0]}" /> </td>
+		<td> <jstl:out value="${findDataBountPerFixUpTask[1]}" /> </td>
+		<td> <jstl:out value="${findRatioPublishedBountvsAllBount}" /> </td>
+		<td> <jstl:out value="${findRatioUnpublishedBountvsAllQuoles}" /> </td>
 	</tr>
 </table>
 

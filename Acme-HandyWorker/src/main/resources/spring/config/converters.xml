@@ -129,8 +129,8 @@
 		
 		<!-- TODO control check -->
 		
-		<bean class="converters.StringToQuoletConverter" />
-		<bean class="converters.QuoletToStringConverter" /> 
+		<bean class="converters.StringToBountConverter" />
+		<bean class="converters.BountToStringConverter" /> 
 	</util:list>
 	
 </beans>

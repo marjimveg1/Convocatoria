@@ -83,8 +83,8 @@
 		<security:intercept-url pattern="/warranty/administrator/**" access="hasRole('ADMIN')" />
 		<security:intercept-url pattern="/warranty/customer,handyWorker,referee/**" access="hasAnyRole('REFEREE','CUSTOMER','HANDYWORKER')" />
 				
-		<security:intercept-url pattern="/quolet/customer/**" access="hasRole('CUSTOMER')" />		
-		<security:intercept-url pattern="/quolet/handyWorker,customer/**" access="hasAnyRole('CUSTOMER','HANDYWORKER')"/>	
+		<security:intercept-url pattern="/bount/customer/**" access="hasRole('CUSTOMER')" />		
+		<security:intercept-url pattern="/bount/handyWorker,customer/**" access="hasAnyRole('CUSTOMER','HANDYWORKER')"/>	
 		
 		<security:intercept-url pattern="/**" access="hasRole('NONE')" />
 

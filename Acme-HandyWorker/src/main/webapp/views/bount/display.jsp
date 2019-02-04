@@ -9,35 +9,35 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 
 
-<jstl:if test="${!quolet.finalMode}">
-	<p style="color:blue;"><spring:message code="quolet.info"/></p>
+<jstl:if test="${!bount.finalMode}">
+	<p style="color:blue;"><spring:message code="bount.info"/></p>
 </jstl:if>
 
-<strong><spring:message code="quolet.ticker"/>:</strong>
-<jstl:out value="${quolet.ticker}"/>
+<strong><spring:message code="bount.ticker"/>:</strong>
+<jstl:out value="${bount.ticker}"/>
 <br/>
 
 
-<strong><spring:message code="quolet.publicationMoment"/>:</strong>
-<spring:message code="quolet.formatMoment1" var="formatMoment"/>
-<fmt:formatDate value="${quolet.publicationMoment}" pattern="${formatMoment}"/>
+<strong><spring:message code="bount.publicationMoment"/>:</strong>
+<spring:message code="bount.formatMoment1" var="formatMoment"/>
+<fmt:formatDate value="${bount.publicationMoment}" pattern="${formatMoment}"/>
 <br/>
 
-<strong><spring:message code="quolet.body"/>:</strong>
-<jstl:out value="${quolet.body}"/>
+<strong><spring:message code="bount.body"/>:</strong>
+<jstl:out value="${bount.body}"/>
 <br/>
 	
 
 	
 	
-<strong><spring:message code="quolet.finalMode"/>:</strong>
-<jstl:out value="${quolet.finalMode}"/>
+<strong><spring:message code="bount.finalMode"/>:</strong>
+<jstl:out value="${bount.finalMode}"/>
 <br/>
 
 
-<strong> <spring:message code="quolet.picture" />: </strong>
+<strong> <spring:message code="bount.picture" />: </strong>
 
-<img src="${quolet.picture}"  width="300" height="400">
+<img src="${bount.picture}"  width="300" height="400">
 <br />
 
 <!-- Links -->
@@ -45,10 +45,10 @@
 <br>
 
 <security:authorize access="hasRole('CUSTOMER')">
-	<jstl:set var="back_link" value="quolet/customer/list.do"/>
+	<jstl:set var="back_link" value="bount/customer/list.do"/>
 </security:authorize>
 <security:authorize access="hasAnyRole('HANDYWORKER')">
 	<jstl:set var="back_link" value="fixUpTask/handyWorker/listAll.do"/>
 </security:authorize>
 
-<a href="${back_link}"><spring:message code="quolet.back"/></a>
+<a href="${back_link}"><spring:message code="bount.back"/></a>

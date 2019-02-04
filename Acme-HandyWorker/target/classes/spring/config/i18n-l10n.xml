@@ -37,7 +37,7 @@
 		<value>/views/welcome/messages</value>
 		
 		<!-- TODO control check -->
-		<value>/views/quolet/messages</value>
+		<value>/views/bount/messages</value>
 	</util:list>
 
 </beans>

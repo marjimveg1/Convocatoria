@@ -19,7 +19,7 @@ import domain.Customer;
 import domain.FixUpTask;
 import domain.HandyWorker;
 import domain.Phase;
-import domain.Quolet;
+import domain.Bount;
 
 @Service
 @Transactional
@@ -45,7 +45,7 @@ public class FixUpTaskService {
 	private ApplicationService	applicationService;
 
 	@Autowired
-	private QuoletService		quoletService;
+	private BountService		bountService;
 
 
 	// Constructor ------------------------------------------------------------
@@ -66,7 +66,7 @@ public class FixUpTaskService {
 		result.setCustomer(this.customerService.findByPrincipal());
 		result.setPublicationMoment(this.utilityService.current_moment());
 		//TODO: CONTROL CHECK
-		result.setQuolets(Collections.<Quolet> emptySet());
+		result.setBounts(Collections.<Bount> emptySet());
 
 		return result;
 	}
@@ -108,7 +108,7 @@ public class FixUpTaskService {
 		this.customerService.removeFixUpTask(fixUpTask.getCustomer(), fixUpTask);
 
 		//TODO control check
-		this.quoletService.delete(fixUpTask);
+		this.bountService.delete(fixUpTask);
 		this.fixUpTaskRepository.delete(fixUpTask);
 	}
 
