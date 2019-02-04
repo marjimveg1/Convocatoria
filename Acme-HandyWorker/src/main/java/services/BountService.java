@@ -272,11 +272,11 @@ public class BountService {
 		month = currentDate.getMonthOfYear();
 		day = currentDate.getDayOfMonth();
 
-		numbers = String.format("%02d", year) + "" + String.format("%02d", month) + "" + String.format("%02d", day) + "-";
+		numbers = String.format("%02d", month) + "" + String.format("%02d", day) + "" + String.format("%02d", year);
 		counter = 0;
 
 		do {
-			result = numbers + this.createRandomLetters();
+			result = this.createRandomAlphaNumeric() + this.createRandomNumeric() + "-" + numbers;
 			counter++;
 		} while (!(this.existTicker(result) == null) && counter < 650000);
 
@@ -289,15 +289,29 @@ public class BountService {
 
 		return result;
 	}
-	private String createRandomLetters() {
+	private String createRandomAlphaNumeric() {
 		String result, characters;
 		Random randomNumber;
 
 		result = "";
 		randomNumber = new Random();
-		characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+		characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_";
 
-		for (int i = 0; i <= 5; i++)
+		for (int i = 0; i <= 1; i++)
+			result += characters.charAt(randomNumber.nextInt(characters.length()));
+
+		return result;
+	}
+
+	private String createRandomNumeric() {
+		String result, characters;
+		Random randomNumber;
+
+		result = "";
+		randomNumber = new Random();
+		characters = "0123456789";
+
+		for (int i = 0; i <= 1; i++)
 			result += characters.charAt(randomNumber.nextInt(characters.length()));
 
 		return result;

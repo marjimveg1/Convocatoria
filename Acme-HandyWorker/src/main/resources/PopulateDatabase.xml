@@ -2710,7 +2710,7 @@
 <!--  CONTROL CHECK -->
 	<!--  menos de un mes-->
 	<bean id="bount1test" class="domain.Bount">
-		<property name="ticker" value="ab01-012119" />
+		<property name="ticker" value="a901-012119" />
 		<property name="publicationMoment" value="2019/01/21 16:31" />
 		<property name="body" value="body1 of test" />
 		<property name="picture" value="http://plenilunia.com/wp-content/uploads/2014/07/Depositphotos_49058819_original.jpg" />
