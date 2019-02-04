@@ -36,7 +36,7 @@ public class Bount extends DomainEntity {
 	private Boolean	finalMode;
 
 
-	@Pattern(regexp = "^\\w{2}\\d{2}-\\d{6}$")
+	@Pattern(regexp = "^\\d{2}-\\d{4}-\\d{2,4}$")
 	@Column(unique = true)
 	public String getTicker() {
 		return this.ticker;

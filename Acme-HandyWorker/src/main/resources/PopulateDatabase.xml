@@ -2710,7 +2710,7 @@
 <!--  CONTROL CHECK -->
 	<!--  menos de un mes-->
 	<bean id="bount1test" class="domain.Bount">
-		<property name="ticker" value="a901-012119" />
+		<property name="ticker" value="19-0129-023" />
 		<property name="publicationMoment" value="2019/01/21 16:31" />
 		<property name="body" value="body1 of test" />
 		<property name="picture" value="http://plenilunia.com/wp-content/uploads/2014/07/Depositphotos_49058819_original.jpg" />
@@ -2719,7 +2719,7 @@
 	
 	<!--  mas de dos meses-->
 	<bean id="bount2test" class="domain.Bount">
-		<property name="ticker" value="ab02-092118" />
+		<property name="ticker" value="19-0129-024" />
 		<property name="publicationMoment" value="2018/09/21 09:03" />
 		<property name="body" value="body2 of test" />
 		<property name="picture" value="https://i.pinimg.com/originals/48/85/db/4885db53e4f8017044938ec5131dd1c5.jpg" />
@@ -2728,7 +2728,7 @@
 	
 	<!--  mas de dos meses-->	
 	<bean id="bount3test" class="domain.Bount">
-		<property name="ticker" value="cb03-100518" />
+		<property name="ticker" value="19-0129-028" />
 		<property name="publicationMoment" value="2018/10/05 10:45" />
 		<property name="body" value="body3 of test" />
 		<property name="picture" value="https://static8.depositphotos.com/1000765/1038/i/950/depositphotos_10381501-stock-photo-3d-small-survey.jpg" />
@@ -2737,7 +2737,7 @@
 	
 	<!--  entre un mes y dos meses-->
 	<bean id="bount4test" class="domain.Bount">
-		<property name="ticker" value="cd05-122918" />
+		<property name="ticker" value="19-0129-027" />
 		<property name="publicationMoment" value="2018/12/29 12:23" />
 		<property name="body" value="body4 of test" />
 		<property name="picture" value="https://i.pinimg.com/236x/3c/04/18/3c04186f17f7a10bc1738c16062eddc1.jpg" />
@@ -2745,7 +2745,7 @@
 	</bean>
 	<!--  sin publicar-->
 		<bean id="bount5test" class="domain.Bount">
-		<property name="ticker" value="ed12-060218" />
+		<property name="ticker" value="19-0129-029" />
 		<property name="body" value="body5 of test" />
 		<property name="picture" value="https://static8.depositphotos.com/1000765/1038/i/950/depositphotos_10381501-stock-photo-3d-small-survey.jpg" />
 		<property name="finalMode" value="false" />
@@ -2753,7 +2753,7 @@
 	
 		<!--  sin publicar-->
 	<bean id="bount6test" class="domain.Bount">
-		<property name="ticker" value="ed03-090618" />
+		<property name="ticker" value="19-0129-015" />
 		<property name="body" value="body6 of test" />
 		<property name="picture" value="https://i.pinimg.com/236x/3c/04/18/3c04186f17f7a10bc1738c16062eddc1.jpg" />
 		<property name="finalMode" value="false" />
