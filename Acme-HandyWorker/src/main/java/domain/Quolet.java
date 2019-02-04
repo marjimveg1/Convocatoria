@@ -37,7 +37,6 @@ public class Quolet extends DomainEntity {
 
 
 	@Pattern(regexp = "\\d{6}-[A-Z0-9]{6}")
-	@NotBlank
 	@Column(unique = true)
 	public String getTicker() {
 		return this.ticker;
