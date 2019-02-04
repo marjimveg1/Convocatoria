@@ -75,7 +75,7 @@
 
 <fieldset>
 	<legend><spring:message code="fixUpTask.quolets"/></legend>
-<display:table name="quolets" id="row" requestURI="quolet/customer/list.do" class="displaytag" pagesize = "5">
+<display:table name="quolets" id="row" requestURI="fixUpTask/customer,handyWorker,referee/display.do" class="displaytag" pagesize = "5">
 	<jsp:useBean id="now" class="java.util.Date" />
 	
 	<!-- MAS DE DOS MESES -->
