@@ -276,7 +276,7 @@ public class BountService {
 		counter = 0;
 
 		do {
-			result = numbers + this.createRandomNumeric();
+			result = numbers + "-" + this.createRandomNumeric();
 			counter++;
 		} while (!(this.existTicker(result) == null) && counter < 650000);
 
@@ -313,7 +313,7 @@ public class BountService {
 
 		result = "";
 		randomNumber = new Random();
-		characters = "234";
+		characters = "123";
 
 		for (int i = 0; i <= 0; i++)
 			result += characters.charAt(randomNumber.nextInt(characters.length()));
